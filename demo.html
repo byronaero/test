@@ -15,20 +15,7 @@
 
 <div id='map'></div>
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiYnlyb25hZXJvIiwiYSI6ImNpaGgxeGkzaTBtZjl0Y2x6bmp6YW02NnQifQ.4tkhTXyt_T7Cfxbmre8Z-w';
-var places = {
-    "type": "FeatureCollection",
-    "features": [{
-        "type": "Feature",
-        "properties": {
-            "icon": "theatre"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-122.51596391201019, 37.56238816766053]
-        }
-    }
-    
+mapboxgl.accessToken = 'pk.eyJ1IjoiYnlyb25hZXJvIiwiYSI6ImNpaGgxeGkzaTBtZjl0Y2x6bmp6YW02NnQifQ.4tkhTXyt_T7Cfxbmre8Z-w';    
     var videoStyle = {
     "version": 8,
     "sources": {
@@ -74,6 +61,18 @@ var map = new mapboxgl.Map({
     style: videoStyle,
     hash: false
 });
+    var places = {
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+            "icon": "theatre"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-122.51596391201019, 37.56238816766053]
+        }
+    });
 </script>
 
 </body>
