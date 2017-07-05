@@ -62,24 +62,13 @@ var map = new mapboxgl.Map({
     hash: false
 });
 
-// Build a marker from a simple GeoJSON object:
-var marker = L.mapbox.featureLayer({
-    type: 'Feature',
-    geometry: {
-        type: 'Point',
-        coordinates: [-122.5169099391201019, 37.56238816766053]
-    },
-    properties: {
-        title: 'Hello world!',
-        'marker-color': '#f86767'
-    }
-}).addTo(map);
-
-// Iterate over the featureLayer we've called "marker"
-// and open its popup instead of clicking to trigger it.
-marker.eachLayer(function(m) {
-  m.openPopup();
-});
+var marker = new mapboxgl.Marker()
+  .setLngLat([-122.514426, 37.562984])
+  .addTo(map);
+    
+    
+    
+    
 </script>
 
 </body>
