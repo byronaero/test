@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-	
-    <script>
+
+   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -13,7 +13,7 @@
     ga('send', 'pageview');
 
    </script>
-	
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,16 +87,12 @@
 
     <header>
         <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">How can you analyse a mining operation if you can’t see it?</h1>
-                <br class="hidden-md-down" />
-                <h1>View every mine. 
-                <br class="hidden-md-down" />In real time, from above, daily.</h1>
+            <div class="header-content-inner" style="background-color: rgba(0,0,0,0.5); padding-top: 3%; width:70%">
+            <div style="color:white;">
+                <h1 id="homeHeading" style="font-size:40px;">How can you analyse a mining operation if you can’t see it?</h1>
+                <h1 style="font-size:40px; padding-bottom:4%">View every mine. <br/> In real time, from above.</h1>
                 <!--a href="#about" class="btn btn-primary btn-xl page-scroll">Learn more</a-->
-                <br class="hidden-md-down" />
-                <br class="hidden-md-down" />
-                <br class="hidden-md-down" />
-                <a href="#map" class="btn btn-primary btn-xl page-scroll">Imagine this over a mine</a>
+            </div>
             </div>
         </div>
     </header>
@@ -144,7 +140,7 @@
     		container: 'map',
     		minZoom: 14,
     		zoom: 17,
-    		center: [-122.5135, 37.562984],
+    		center: [-122.5145, 37.562984],
     		bearing: 87,
     		style: videoStyle,
     		hash: false
@@ -153,6 +149,8 @@
 		map.scrollZoom.disable();
 		map.addControl(new mapboxgl.NavigationControl());
 		</script>
+        <div style="position:absolute; top:30px; left:55%; overflow:hidden; background-color: rgba(0,0,0,0.5); width:35%; z-index:4;">
+        <h1 style="color:white; text-align:center; vertical-align: center; padding:5px; margin:0; font-size:30px">Imagine this over a mine site.</h1>
 		</div>
 	</section>
 
@@ -177,7 +175,7 @@
         </div>
     </section-->
 
-	<div style="position:relative; background: black; width: 80%; height:1.2px; margin:0px; left:50%; transform: translateX(-50%)">
+	<div style="position:relative; background: black; width: 85%; height:1.2px; margin:0px; left:50%; transform: translateX(-50%)">
 	</div>
 	
     <section style="position:relative; overflow: hidden; padding-top:70px; padding-bottom:110px">
@@ -186,42 +184,41 @@
     	<br>
     	<br>
     	<br>
-    	<br>
     	<div id="contentBox" style="margin:0px auto; width:95%">
     	
     	<div style="float:left; margin:0; width:33%; text-align: center;">
-    	<img width="40.5%" style="margin: 2rem 0" src="./img/left.png"></img>
+    	<img width="25%" style="margin: 2rem 0" src="./img/earth-globe.svg"></img>
     	<h2>1. Select Location</h2>
-    	<br class="hidden-md-down" />
-    	<p style="font-size: 23px; color:black">Select mine sites from around the world.</p>
+    	<br/>
+    	<p style="font-size: 20px; color:black">Select mine sites from around the world.</p>
     	</div>
 
     	<div style="float:left; margin:0; width:33%; text-align: center;">
-    	<img width="37%" style="margin: 2rem 0" src="./img/mid.png"></img>
+    	<img width="34.5%" src="./img/hand-shake.svg"></img>
     	<h2>2. Get Approved</h2>
-    	<br class="hidden-md-down" />
-    	<p style="font-size: 23px; color:black">Mine operator approves of data usage.</p>
+    	<br/>
+    	<p style="font-size: 20px; color:black">Mine operator approves data usage.</p>
     	</div>
 
     	<div style="float:left; margin:0; width:33%; text-align: center;">
-    	<img width="27.5%" style="margin: 2rem 0" src="./img/right.png"></img>
+    	<img width="25%" style="margin: 2rem 0" src="./img/analytics.svg"></img>
     	<h2>3. Access Data, Create Apps</h2>
-    	<br class="hidden-md-down" />
-    	<p style="font-size: 23px; color:black">Use our data to create apps that help mines improve their operation.</p>
+    	<br/>
+    	<p style="font-size: 20px; color:black">Use our data to create apps and help mines be more efficient.</p>
     	</div>
     	</div>
     </section>
 	
-	<div class="image" style="position: relative; height:60%; width:100%; overflow: hidden;">
-      	<img style="opacity: 1; width:100%" src="./img/mine.jpg" alt="" />
-      	<div class="center" style="margin:auto; padding-top:10px; text-align:center">
-      		<a href="#contact" class="btn btn-primary btn-xl page-scroll" style="position:absolute; top:20%; left:50%; transform: translateX(-50%);">Request Trial</a>
-      		<h1 style="position:absolute; top:30%; padding-top:4%; width:90%; color:white; left:50%; transform: translateX(-50%);">Start using our data now to explore possible use cases.</h1>
-      		<br class="hidden-md-down" />
-      		<br class="hidden-md-down" />
-      		<h1 style="position:absolute; top:50%; padding-top:4%; width:90%; color:white; left:50%; transform: translateX(-50%);">Join us in transforming how mines are run around the world.</h1>
-      	</div>
-	</div>
+    <div class="image" style="position: relative; height:60%; width:100%; overflow: hidden;">
+        <img style="opacity: 1; width:100%" src="./img/mine.jpg" alt="" />
+        <div class="center" style="margin:auto; padding-top:10px; text-align:center">
+            <a href="#contact" class="btn btn-primary btn-xl page-scroll" style="position:absolute; top:20%; left:50%; transform: translateX(-50%);">Request Trial</a>
+            <h1 style="position:absolute; top:30%; padding-top:4%; width:90%; color:white; left:50%; transform: translateX(-50%);">Start using our data now to explore possible use cases.</h1>
+            <br class="hidden-md-down" />
+            <br class="hidden-md-down" />
+            <h1 style="position:absolute; top:50%; padding-top:4%; width:90%; color:white; left:50%; transform: translateX(-50%);">Join us in transforming how mines are run around the world.</h1>
+        </div>
+    </div>
 
 	<!--div style="position:relative; background: black;  width: 100%; height:120px; margin:0px; float:up; clear:none; overflow:hidden">
 		<h1 style="color:white; text-align:center; top:50%; transform: translateY(50%)">Only pay for the hours you use.</h1>
@@ -242,8 +239,8 @@
 	<div style="position:relative; top:-10px; background: black; width: 300px; height:1.2px; left:50%; transform: translateX(-50%)">
 	</div>
 
-	<h2 style="text-align:center; transform: translateY(-50%);">Live stream access per mine.</h2>
-	<p style="text-align:center; position:relative; top:-10px">*Pricing varies with coverage area.</p> 
+	<h2 style="text-align:center; transform: translateY(-50%); font-size:35px">Per 25 Km<sup>2</sup> of live stream coverage.</h2>
+	<p style="text-align:center; position:relative; top:-10px">*Pricing varies with total coverage area.</p> 
 
     <!--section style="position:relative; overflow: hidden;">
     	<div id="contentBox" style="margin:0px auto; width:90%; overflow: hidden;">
@@ -281,34 +278,35 @@
     	</div>
     </section-->
 
-    <div style="margin-left:15%; margin-right:15%; margin-top:60px;padding-bottom:75px">
-    	<p style="color:black; text-align: center; font-size:30px">This gives you access to a real-time video stream over any mine on an hourly basis.</p>
-    	<br class="hidden-md-down" />
-		<p style="color:black; text-align: center; font-size:30px">You can view it from our website or easily pull it into your apps.</p>
+    <div style="margin-left:15%; margin-right:15%; margin-top:50px;padding-bottom:65px">
+        <p style="color:black; text-align: center; font-size:30px">This gives you access to a real-time video stream over any mine on an hourly basis.</p>
+        <br class="hidden-md-down" />
+        <p style="color:black; text-align: center; font-size:30px">You can view it from our website or easily pull it into your apps.</p>
     </div>
 
-    <div class="image" style="position: relative; height:600px; width:100%; overflow: hidden;">
-      	<img style="opacity: 1; width:100%" src="./img/mine_3.png" alt="" />
-      	<div class="container" style="margin:auto; padding-top:10px;">
+    <div class="image" style="position: relative; width:100%; overflow: hidden;">
+        <img style="opacity: 1; width:100%" src="./img/mine_3.png" alt="" />
+        <div class="container" style="position:absolute; top:6.75%; background-color: rgba(0,0,0,0.5); padding:13px; left:50%; transform: translateX(-50%)">
+            <!--div class="header-content-inner" style="position:absolute; top:2%; background-color: rgba(0,0,0,0.5); padding-top: 3%; width:70%"-->
+            <h1 style="position:relative; text-align:center; margin:0; padding:30px; color:white;">Technical Specs</h1>
+            <div style="position:relative; background: white; width: 85%; height:1px; margin:0px; left:50%; transform: translateX(-50%);">
+            </div>
+            <!--a class="btn btn-primary btn-xl page-scroll" style="position:absolute; top:20px; left:50%; transform: translateX(-50%);">Technical Specs</a-->
+            <!--h1 style="position:absolute; color:white; top:10%; padding-top:4%; width:100%; left:50%; transform: translateX(-50%); text-align: center;">We capture all imagery using an in-air camera array.</h1-->
+            <!--h2 style="position:absolute; top:25%; padding-top:4%; width:90%; color:white; left:50%; transform: translateX(-50%); text-align: center;"-->
+            <ul style="position:relative; top:20px; width:80%; margin-left:30%; text-align: left; font-size:30px; list-style: none; overflow:hidden">
+            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;5cm Resolution</li>
+            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;Long &amp; Lat Accuracy &plusmn; 10cm</li>
+            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;RGB &amp; Infrared Data</li>
+            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;Encrypted Data Stream</li>
+            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;24-Hour Data Access</li>
+            </ul>
+            <p style="position:relative; top:25px; width:95%; left:50%; transform: translateX(-50%); text-align: center; color:white; padding-bottom:25px; font-size:30px">We are working on identifying ground equipment with computer vision.</p>
+            <!--/div-->
+        </div>
+    </div>
 
-      	    <div style="position:absolute; top:7%; background: #00bcd4; width: 350px; height:70px; margin:0; padding:0; left:50%; transform: translateX(-50%);">
-				<h1 style="position:relative; top:50%; transform: translateY(-50%); text-align:center; margin:0; padding:0; color:white;">Technical Specs</h1>
-			</div>
-      		<!--a class="btn btn-primary btn-xl page-scroll" style="position:absolute; top:20px; left:50%; transform: translateX(-50%);">Technical Specs</a-->
-      		<h1 style="position:absolute; color:white; top:10%; padding-top:4%; width:100%; left:50%; transform: translateX(-50%); text-align: center;">We capture all imagery data using an in-air camera array.</h1>
-      		<br>
-      		<br>
-      		<!--h2 style="position:absolute; top:25%; padding-top:4%; width:90%; color:white; left:50%; transform: translateX(-50%); text-align: center;"-->
-      		<ul style="position:absolute; top:25%; padding-top:4%; width:80%; margin-left:18%; text-align: left; font-size:30px; list-style: none;">
-  				<li style="color:white;"><span style="color:white">&#x2714;</span>&nbsp;&nbsp;&nbsp;5cm Resolution</li>
-  				<li style="color:white"><span style="color:white">&#x2714;</span>&nbsp;&nbsp;&nbsp;Longitude &amp; Latitude Accuracy &plusmn; 10cm</li>
-  				<li style="color:white"><span style="color:white">&#x2714;</span>&nbsp;&nbsp;&nbsp;RGB &amp; Infrared Data</li>
-  				<li style="color:white"><span style="color:white">&#x2714;</span>&nbsp;&nbsp;&nbsp;Encrypted Data Stream</li>
-  				<li style="color:white"><span style="color:white">&#x2714;</span>&nbsp;&nbsp;&nbsp;24-Hour Data Access</li>
-			</ul>
-			<h2 style="position:absolute; top:75%; color:white; width:80%; left:50%; transform: translateX(-50%); text-align: center;">We are working on identification of ground equipment using computer vision.</h2>
-      	</div>
-	</div>
+
 
     <section id="contact">
         <div class="container">
