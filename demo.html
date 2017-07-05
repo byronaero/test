@@ -61,6 +61,18 @@ var map = new mapboxgl.Map({
     style: videoStyle,
     hash: false
 });
+ var places = {
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+            "icon": "theatre"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-122.51596391201019, 37.56238816766053]
+        }
+    });
    
 </script>
 
