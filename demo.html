@@ -131,6 +131,12 @@ var places = {
         }
     }]
 };
+map.on('load', function() {
+    // Add a GeoJSON source containing place coordinates and information.
+map.addSource('places', {
+    "type": "geojson",
+    "data": places
+    });
 
    
 </script>
