@@ -89,7 +89,7 @@
         <div class="header-content">
             <div class="header-content-inner" style="background-color: rgba(0,0,0,0.5); padding-top: 3%; width:70%">
             <div style="color:white;">
-                <h1 id="homeHeading" style="font-size:40px;">How can you analyse a mining operation if you can’t see it?</h1>
+                <h1 id="homeHeading" style="font-size:40px; padding-left:30px; padding-right: 30px">How can you analyse a mining operation if you can’t see it?</h1>
                 <h1 style="font-size:40px; padding-bottom:4%">View every mine. <br/> In real time, from above.</h1>
                 <!--a href="#about" class="btn btn-primary btn-xl page-scroll">Learn more</a-->
             </div>
@@ -139,7 +139,7 @@
 		var map = new mapboxgl.Map({
     		container: 'map',
     		minZoom: 14,
-    		zoom: 17,
+    		zoom: 17.3,
     		center: [-122.5145, 37.562984],
     		bearing: 87,
     		style: videoStyle,
@@ -194,7 +194,7 @@
     	</div>
 
     	<div style="float:left; margin:0; width:33%; text-align: center;">
-    	<img width="33.5%" src="./img/hand-shake.svg"></img>
+    	<img width="34.5%" src="./img/hand-shake.svg"></img>
     	<h2>2. Get Approved</h2>
     	<br/>
     	<p style="font-size: 20px; color:black">Mine operator approves data usage.</p>
@@ -212,11 +212,12 @@
     <div class="image" style="position: relative; height:60%; width:100%; overflow: hidden;">
         <img style="opacity: 1; width:100%" src="./img/mine.jpg" alt="" />
         <div class="center" style="margin:auto; padding-top:10px; text-align:center">
-            <a href="#contact" class="btn btn-primary btn-xl page-scroll" style="position:absolute; top:20%; left:50%; transform: translateX(-50%);">Request Trial</a>
-            <h1 style="position:absolute; top:30%; padding-top:4%; width:90%; color:white; left:50%; transform: translateX(-50%);">Start using our data now to explore possible use cases.</h1>
-            <br class="hidden-md-down" />
-            <br class="hidden-md-down" />
-            <h1 style="position:absolute; top:50%; padding-top:4%; width:90%; color:white; left:50%; transform: translateX(-50%);">Join us in transforming how mines are run around the world.</h1>
+            <a href="#contact" class="btn btn-primary btn-xl page-scroll" style="position:absolute; top:15%; left:50%; transform: translateX(-50%);">Request Trial</a>
+            <div style="position:absolute; top:38%; background-color: rgba(0,0,0,0.5); width:90%; left:50%; transform: translateX(-50%); padding:15px">
+            <h1 style="color:white; text-align:center; margin:0; padding-top:15px">Start using our data now to explore possible use cases.</h1>
+            <br/><br/>
+            <h1 style="color:white; text-align:center; margin:0; padding-bottom:15px">Join us in transforming how mines are run around the world.</h1>
+            </div>
         </div>
     </div>
 
@@ -295,8 +296,8 @@
             <!--h1 style="position:absolute; color:white; top:10%; padding-top:4%; width:100%; left:50%; transform: translateX(-50%); text-align: center;">We capture all imagery using an in-air camera array.</h1-->
             <!--h2 style="position:absolute; top:25%; padding-top:4%; width:90%; color:white; left:50%; transform: translateX(-50%); text-align: center;"-->
             <ul style="position:relative; top:20px; width:80%; margin-left:30%; text-align: left; font-size:30px; list-style: none; overflow:hidden">
-            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;50cm Resolution</li>
-            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;Long &amp; Lat Accuracy &plusmn; 10cm</li>
+            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;50cm GSD</li>
+            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;Absolute Accuracy &plusmn; 15cm</li>
             <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;RGB &amp; Infrared Data</li>
             <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;Encrypted Data Stream</li>
             <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;24-Hour Data Access</li>
@@ -320,7 +321,7 @@
                     Sydney NSW 2000</p>
                 </div>
                 <div class="col-md-8 col-md-offset-2 text-center">
-                  <a href="mailto:info@nearsat.com">info@nearsat.com</a>
+                  <p style="font-size:20px">+61 404-176-441 | <a href="mailto:info@nearsat.com">info@nearsat.com</a> </p>
                   <!--a href="https://goo.gl/forms/v3JZ3BuFH81ng11q1" target="_blank" class="page-scroll btn btn-primary btn-xl sr-button">Sign up for updates
                   </a-->
                 </div>
