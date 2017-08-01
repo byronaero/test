@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-
+    
+    
    <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -13,25 +14,14 @@
     ga('send', 'pageview');
 
    </script>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Near-Space Satellites providing live imagery.">
-    <meta name="author" content="NearSat PTY LTD">
+    <meta name="description" content="NearSat - High Altitude, Solar-Powered Drones.">
+    <meta name="author" content="">
     <meta name="google-site-verification" content="syTBPCs6yEwlDLzHz3ovJnHo4iGOWiwj1ODUlPLRh4g" />
 
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
-    <style>
-        body { margin:0; padding:0; zoom: 100%;}
-        #map { position:relative; top:-100px; left:0; right:100px; height:100%; width:100%; overflow:hidden;}
-    </style>
-    <!-- width:90%; -->
-
-    <!--title>NearSat - Analytics</title-->
-    <title>NearSat</title>
+    <title>NearSat &mdash; the near&ndash;space satellite</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,13 +31,8 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="css/creative.min.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
+    <link href="css/creative.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -72,9 +57,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="./demo.html">Live Stream Demo</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -83,251 +65,54 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    
+    <a href="./ridsaas.html">RidSaaS</a>
 
     <header>
         <div class="header-content">
-            <div class="header-content-inner" style="background-color: rgba(0,0,0,0.5); padding-top: 3%; width:70%;">
-            <div style="color:white;">
-                <h1 id="homeHeading" style="font-size:40px; padding-left:30px; padding-right: 30px">View every mine.<br/>In real time, from above.</h1>
-                <h1 style="font-size:20px; padding-bottom:30px; padding-left:10px; padding-right: 10px">We provide you with a 24/7, live video stream over mine sites that is accessible from anywhere around the world.</h1>
-                <!--a href="#about" class="btn btn-primary btn-xl page-scroll">Learn more</a-->
-            </div>
+            <div class="header-content-inner">
+                <h1 id="homeHeading">Observing Earth in the Highest Quality Using Near-Space Satellites</h1>
+                <p>NearSat is building a constellation of solar-powered drones that fly at 20KM above the Earth’s surface.<br class="hidden-md-down" />
+                </p>
             </div>
         </div>
     </header>
 
-    <section id="map" style="position:relative; overflow:hidden; margin:0; padding:0">
-    	<div style="overflow:hidden; margin:0; padding:0">
-		<script>
-		mapboxgl.accessToken = 'pk.eyJ1IjoiYnlyb25hZXJvIiwiYSI6ImNpaGgxeGkzaTBtZjl0Y2x6bmp6YW02NnQifQ.4tkhTXyt_T7Cfxbmre8Z-w';
-		var videoStyle = {
-    		"version": 8,
-    		"sources": {
-        		"satellite": {
-            		"type": "raster",
-            		"url": "mapbox://mapbox.satellite",
-            		"tileSize": 256
-        		},
-        		"video": {
-            		"type": "video",
-            		"urls": ["https://www.mapbox.com/drone/video/drone.mp4", "https://www.mapbox.com/drone/video/drone.webm"],
-            		"coordinates": [
-                		[-122.51596391201019, 37.56238816766053],
-                		[-122.51467645168304, 37.56410183312965],
-                		[-122.51309394836426, 37.563391708549425],
-                		[-122.51423120498657, 37.56161849366671]
-            		]
-        		}
-    		},
-    		"layers": [{
-        		"id": "background",
-        		"type": "background",
-        		"paint": {
-            		"background-color": "rgb(4,7,14)"
-        		}
-    		}, {
-        		"id": "satellite",
-        		"type": "raster",
-        		"source": "satellite"
-    		}, {
-        		"id": "video",
-        		"type": "raster",
-        		"source": "video"
-    		}]
-		};
-		var map = new mapboxgl.Map({
-    		container: 'map',
-    		minZoom: 14,
-    		zoom: 17.3,
-    		center: [-122.5145, 37.562984],
-    		bearing: 87,
-    		style: videoStyle,
-    		hash: false
-		});
-
-		map.scrollZoom.disable();
-		map.addControl(new mapboxgl.NavigationControl());
-		</script>
-        <div style="position:absolute; top:30px; left:58%; overflow:hidden; background-color: rgba(0,0,0,0.5); width:30%; z-index:4;">
-        <h1 style="color:white; text-align:center; vertical-align: center; padding:5px; margin:0; font-size:30px">Imagine this live stream over a mine site.</h1>
-		</div>
-	</section>
-
-	<div style="margin-left:16%; margin-right:16%; padding-bottom:50px;">
-		<!--h1 style="color:black; text-align:center;">The easiest way to know what’s happening on-site is to see it in real time.</h1-->
-        <h1 style="color:black; text-align:center;">Manage site operations by seeing them in real time.</h1>
-		<br class="hidden-md-down" />
-		<br class="hidden-md-down" />
-        <h1 style="color:black; text-align:center;">Our data will improve the way your systems monitor and analyse mining operations.</h1>
-        <br class="hidden-md-down" />
-		<br class="hidden-md-down" />
-	</div>
-
-    <!--section class="bg-primary" id="about" style="position:relative; overflow:hidden;">
+    <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
-                    <h2 class="section-heading">The easiest way to know what’s happening on-site is to visually see it in real time.<br class="hidden-md-down" />
+                    <h2 class="section-heading">In comparison to existing satellites, we provide:<br class="hidden-md-down" />
+                    <hr class="light">
                     <br class="hidden-md-down" />
-                    Our data will improve the way your apps monitor and analyse mining operations.</h2>
+                    20x Improvement in Resolution<br class="hidden-md-down" />
+                    <br class="hidden-md-down" />
+                    250x Reduction in Cost<br class="hidden-md-down" />
+                    <br class="hidden-md-down" />
+                    Unparalleled Live Data Stream<br class="hidden-md-down" /></h2>
                 </div>
             </div>
         </div>
-    </section-->
-
-	<div style="position:relative; background: black; width: 85%; height:1.2px; margin:0px; left:50%; transform: translateX(-50%)">
-	</div>
-	
-    <section style="position:relative; overflow: hidden; padding-top:70px; padding-bottom:110px">
-    	<h1 style="color:black; text-align:center; top:50%; transform: translateY(50%); padding:0; margin:0">How NearSat Works</h1>
-    	<br>
-    	<br>
-    	<br>
-    	<br>
-    	<div id="contentBox" style="margin:0px auto; width:95%">
-    	
-    	<div style="float:left; margin:0; width:33%; text-align: center;">
-    	<img height=73px style="margin: 2rem 0" src="./img/left.svg"></img>
-    	<h2>Select Location</h2>
-    	<br/>
-    	<p style="font-size: 20px; color:black">Select mine sites from around the world.</p>
-    	</div>
-
-    	<div style="float:left; margin:0; width:33%; text-align: center;">
-    	<img height=112px src="./img/hand-shake.svg"></img>
-    	<h2>Get Approved</h2>
-    	<br/>
-    	<p style="font-size: 20px; color:black">Mine operator approves data usage.</p>
-    	</div>
-
-    	<div style="float:left; margin:0; width:33%; text-align: center;">
-    	<img height=73px style="margin: 2rem 0" src="./img/analytics.png"></img>
-    	<h2>Access Live Video Stream</h2>
-    	<br/>
-    	<p style="font-size: 20px; color:black">Use our data to create apps that help mines be more efficient.</p>
-    	</div>
-    	</div>
     </section>
-	
-    <div class="image" style="position: relative; height:60%; width:100%; overflow: hidden;">
-        <img style="opacity: 1; width:100%" src="./img/trial1.png" alt="" />
-        <div class="center" style="margin:auto; padding-top:10px; text-align:center">
-            <a href="#contact" class="btn btn-primary btn-xl page-scroll" style="position:absolute; top:15%; left:50%; transform: translateX(-50%);">Request Trial</a>
-            <div style="position:absolute; top:38%; background-color: rgba(0,0,0,0.5); width:90%; left:50%; transform: translateX(-50%); padding:15px">
-            <h1 style="color:white; text-align:center; margin:0; padding-top:12px; font-size:32px">Explore how our data helps you improve mine productivity and safety.</h1>
-            <br/><br/>
-            <h1 style="color:white; text-align:center; margin:0; padding-bottom:12px; font-size:32px">Join us in transforming how mines are run around the world.</h1>
-            </div>
-        </div>
-    </div>
-
-	<!--div style="position:relative; background: black;  width: 100%; height:120px; margin:0px; float:up; clear:none; overflow:hidden">
-		<h1 style="color:white; text-align:center; top:50%; transform: translateY(50%)">Only pay for the hours you use.</h1>
-	</div-->
-
-	<h1 style="text-align:center; top:50%; transform: translateY(50%); margin-top:60px; font-size:35px">Only pay for the hours you use.</h1>
-
-    <h1 style="text-align:center; top:50%; transform: translateY(50%); margin-top:70px; font-size:25px">Solutions available from as low as</h1>
-	<!--div style="position:relative; border-radius: 25px; background: #000000; width: 600px; height: 175px; margin:auto; left:0; margin-top:80px">
-		<h1 style="color:white; text-align:center; position:relative; top:40px; transform: translateY(-50%)">$ 49 per Hour</h1>
-		<h1 style="color:white; text-align:center; position:relative; top:40px; transform: translateY(-50%)">Live stream access per mine.</h1>
-		<br class="hidden-md-down" />
-		<p style="color:white; text-align:center; position:relative; top:20px">*Pricing varies with coverage area.</p> 
-	</div-->
-    <div style="position:relative; text-align:center;padding-top:15px">
-    <span style="font-size:55px;">$79/</span><span style="font-size:45px; vertical-align:5%; ">hr Per 25 Km<sup>2</sup></span><span style="font-size:15px; vertical-align: top;">*</span>
-    </div>
-    <div style="position:relative; margin-bottom:10px; background-color: black; width: 400px; height:1.2px; left:50%; transform: translateX(-50%)">
-    </div>
-
-
-
-	<p style="text-align:center; font-size:15px">*Pricing varies with total coverage area and specific client requirements</p> 
-
-    <!--section style="position:relative; overflow: hidden;">
-    	<div id="contentBox" style="margin:0px auto; width:90%; overflow: hidden;">
-    	
-    	<div style="float:left; margin:0; width:25%; text-align: center;">
-    	<br class="hidden-md-down" />
-    	<img width="47.5%" style="margin: 2rem 0" src="./img/fingers.png"></img>
-    	<br class="hidden-md-down" />
-    	<h2>Easy to Use</h2>
-    	</div>
-
-    	<div style="float:left; margin:0; width:25%; text-align: center;">
-    	<br class="hidden-md-down" />
-    	<img width="41.5%" style="margin: 2rem 0" src="./img/mag.png"></img>
-    	<br class="hidden-md-down" />
-    	<br class="hidden-md-down" />
-    	<h2>High Resolution</h2>
-    	</div>
-
-    	<div style="float:left; margin:0; width:25%; text-align: center;">
-    	<br class="hidden-md-down" />
-    	<img width="46%" style="margin: 2rem 0" src="./img/clock.png"></img>
-    	<br class="hidden-md-down" />
-    	<h2>Real Time</h2>
-    	</div>
-
-    	<div style="float:left; margin:0; width:25%; text-align: center;">
-    	<br class="hidden-md-down" />
-    	<img width="40.5%" style="margin: 2rem 0" src="./img/dollar.png"></img>
-    	<br class="hidden-md-down" />
-    	<br class="hidden-md-down" />
-    	<h2>Cost Effective</h2>
-    	</div>
-
-    	</div>
-    </section-->
-
-    <div style="margin-left:13%; margin-right:13%; margin-top:50px;padding-bottom:65px">
-        <p style="color:black; text-align: center; font-size:30px">This gives you access to a real-time video stream over any mine on an hourly basis.</p>
-        <br class="hidden-md-down" />
-        <p style="color:black; text-align: center; font-size:30px">You can view it from our website or easily integrate it into your apps.</p>
-    </div>
-
-    <div class="image" style="position: relative; width:100%; overflow: hidden;">
-        <img style="opacity: 1; width:100%" src="./img/mine_4.png" alt="" />
-        <div class="container" style="position:absolute; top:6%; background-color: rgba(0,0,0,0.5); padding:13px; left:50%; transform: translateX(-50%)">
-            <!--div class="header-content-inner" style="position:absolute; top:2%; background-color: rgba(0,0,0,0.5); padding-top: 3%; width:70%"-->
-            <h1 style="position:relative; text-align:center; margin:0; padding:30px; color:white;">Technical Specs</h1>
-            <div style="position:relative; background: white; width: 85%; height:1px; margin:0px; left:50%; transform: translateX(-50%);">
-            </div>
-            <!--a class="btn btn-primary btn-xl page-scroll" style="position:absolute; top:20px; left:50%; transform: translateX(-50%);">Technical Specs</a-->
-            <!--h1 style="position:absolute; color:white; top:10%; padding-top:4%; width:100%; left:50%; transform: translateX(-50%); text-align: center;">We capture all imagery using an in-air camera array.</h1-->
-            <!--h2 style="position:absolute; top:25%; padding-top:4%; width:90%; color:white; left:50%; transform: translateX(-50%); text-align: center;"-->
-            <ul style="position:relative; top:20px; width:80%; margin-left:30%; text-align: left; font-size:30px; list-style: none; overflow:hidden">
-            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;50cm GSD</li>
-            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;Absolute Accuracy &plusmn; 15cm</li>
-            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;RGB &amp; Infrared Data</li>
-            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;Encrypted Data Stream</li>
-            <li style="margin-top: 10px; margin-bottom: 10px; color:white"><span style="color:#808080;">&#9679;</span>&nbsp;&nbsp;&nbsp;24-Hour Data Access</li>
-            </ul>
-            <p style="position:relative; top:25px; width:95%; left:50%; transform: translateX(-50%); text-align: center; color:white; padding-bottom:25px; font-size:30px">We are working on identifying ground equipment with computer vision.</p>
-            <!--/div-->
-        </div>
-    </div>
 
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
-                    <h2 class="section-heading">Head Office</h2>
-                    	<div style="position:relative; background: black; width: 200px; height:1.2px; left:50%; transform: translateX(-50%)">
-						</div>
-                     <h3 style="text-align:center; transform: translateY(-50%);">Sydney, Australia</h3>
-                    <p style="font-size:20px">Level 9, 175 Liverpool St<br class="hidden-md-down" />
-                    Sydney NSW 2000</p>
+                    <h2 class="section-heading">We enable data analytics companies to help the sites we image run more efficiently</h2>
+                    <hr class="primary">
                 </div>
                 <div class="col-md-8 col-md-offset-2 text-center">
-                  <p style="font-size:20px"><a href="mailto:info@nearsat.com">info@nearsat.com</a></p>
-                  <!--a href="https://goo.gl/forms/v3JZ3BuFH81ng11q1" target="_blank" class="page-scroll btn btn-primary btn-xl sr-button">Sign up for updates
-                  </a-->
+                  <p>We have been building drones for over ten years and gathered over a thousand flight hours.<br class="hidden-md-down" />
+                    <br class="hidden-md-down" />
+                    Our aerial platform combines the benefits of low-altitude imaging with the scalability of satellite coverage. 
+                    With a high range thanks to its solar panels and autonomous flight capability, it's the cheapest way to get spatial data.<br class="hidden-md-down" />
+                    <br class="hidden-md-down" />
+                    Contact us at : <a href="mailto:info@nearsat.com">info@nearsat.com</a> </p>
                 </div>
             </div>
         </div>
     </section>
-
 
     <section class="bg-dark" id="footer">
         <div class="container">
