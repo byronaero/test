@@ -254,7 +254,7 @@ window.setInterval(function(){ // Set interval for checking
 function countdown(){
 // Set the date we're counting down to
 //var timeallocated = (0.05 * 60 * 1000)
-var timeallocated = (0.5 * 60 * 1000)
+var timeallocated = (15 * 60 * 1000)
 var countDownDate = new Date().getTime() + timeallocated;
     countDownDate = new Date(countDownDate);
     localStorage.setItem("endtime", JSON.stringify(countDownDate));
