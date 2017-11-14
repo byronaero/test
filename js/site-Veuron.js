@@ -79,7 +79,8 @@ function viewdata(){
                 },
                 "overlay": {
                     "type": "image",
-                    "url": "http://nearsat.com/img/4ktest.jpg",
+                    "url": "http://nearsat.com/img/beforeanalysis.png",
+                    //"url": "https://vignette.wikia.nocookie.net/narnia/images/7/7e/Caspian_dawn_treader.png/revision/latest?cb=20101213200426",
                     "coordinates": [
                         [153.007059, -27.553928], //top left
                         [153.007558, -27.553928],
@@ -113,7 +114,8 @@ function viewdata(){
                 },
                 "overlay": {
                     "type": "image",
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/1200px-Wikipedia-logo-v2-en.svg.png",
+                    "url": "http://nearsat.com/img/afteranalysis.png",
+                    //"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/1200px-Wikipedia-logo-v2-en.svg.png",
                     "coordinates": [
                         [153.007059, -27.553928], //top left
                         [153.007558, -27.553928],
