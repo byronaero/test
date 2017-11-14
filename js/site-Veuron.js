@@ -82,10 +82,10 @@ function viewdata(){
                     "url": "http://nearsat.com/img/beforeanalysis.png",
                     //"url": "https://vignette.wikia.nocookie.net/narnia/images/7/7e/Caspian_dawn_treader.png/revision/latest?cb=20101213200426",
                     "coordinates": [
-                        [153.007059, -27.553928], //top left
-                        [153.007558, -27.553928],
-                        [153.007558, -27.554348], //bottom right
-                        [153.007059, -27.554348]
+                                    [149.752224, -27.405166],
+                                    [149.754192, -27.405166],
+                                    [149.754192, -27.406957],
+                                    [149.752224, -27.406957]
                     ]
                 }
             },
@@ -117,10 +117,15 @@ function viewdata(){
                     "url": "http://nearsat.com/img/afteranalysis.png",
                     //"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/1200px-Wikipedia-logo-v2-en.svg.png",
                     "coordinates": [
-                        [153.007059, -27.553928], //top left
-                        [153.007558, -27.553928],
-                        [153.007558, -27.554348], //bottom right
-                        [153.007059, -27.554348]
+                                    [149.752224, -27.405166],
+                                    [149.754192, -27.405166],
+                                    [149.754192, -27.406957],
+                                    [149.752224, -27.406957]
+
+                        //[153.007059, -27.553928], //top left
+                        //[153.007558, -27.553928],
+                        //[153.007558, -27.554348], //bottom right
+                        //[153.007059, -27.554348]
                     ]
                 }
             },
@@ -143,7 +148,7 @@ function viewdata(){
             container: 'map',
             //minZoom: 14,
             zoom: 18,
-            center: [153.007394, -27.554095],
+            center: [153.753208, -27.405163],
             //bearing: 87,
             style: mapStyle,
 });
@@ -425,7 +430,7 @@ var asd = new mapboxgl.Compare(map, afterMap, {
 
 function analysisimagetoggle(){
     var mapstyleid = map.getStyle();
-    if (mapstyleid.sources.overlay.url == "https://vignette.wikia.nocookie.net/narnia/images/7/7e/Caspian_dawn_treader.png/revision/latest?cb=20101213200426"){
+    if (mapstyleid.sources.overlay.url == "http://nearsat.com/img/beforeanalysis.png"){
         map.setStyle(mapStyle1);
         document.getElementById("analysisimage").value = "Pre Analysis";
     } else {
