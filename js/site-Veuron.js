@@ -79,7 +79,7 @@ function viewdata(){
                 },
                 "overlay": {
                     "type": "image",
-                    "url": "https://github.com/byronaero/test/tree/gh-pages/img/caspian.jpg",
+                    "url": "Access-Control-Allow-Origin: https://github.com/byronaero/test/tree/gh-pages/img/caspian.jpg",
                     "coordinates": [
                         [153.007059, -27.553928], //top left
                         [153.007558, -27.553928],
