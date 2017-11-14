@@ -17,7 +17,7 @@ $(document).ready(function(){
         container: 'map',
         style: 'mapbox://styles/mapbox/satellite-v9',
         // initial position in [lon, lat] format
-        center: [153.007394, -27.554095],
+        center: [149.752224 , -27.405166],
         // initial zoom
         zoom: 18
         });
@@ -44,8 +44,8 @@ $(document).ready(function(){
         },
         'layout': {},
         'paint': {
-            'fill-color': '#088',
-            'fill-opacity': 0.8
+            "fill-color": "#27e846",
+            "fill-opacity": 0.5
         }
     });
 });
@@ -148,7 +148,7 @@ function viewdata(){
             container: 'map',
             //minZoom: 14,
             zoom: 18,
-            center: [153.753208, -27.405163],
+            center: [149.752224 , -27.405166],
             //bearing: 87,
             style: mapStyle,
 });
