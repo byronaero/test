@@ -79,7 +79,7 @@ function viewdata(){
                 },
                 "overlay": {
                     "type": "image",
-                    "url": "https://vignette.wikia.nocookie.net/narnia/images/7/7e/Caspian_dawn_treader.png/revision/latest?cb=20101213200426",
+                    "url": "../img/caspian.jpg",
                     "coordinates": [
                         [153.007059, -27.553928], //top left
                         [153.007558, -27.553928],
