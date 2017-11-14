@@ -1,27 +1,22 @@
-window.onload=hidepanel();
-function hidepanel() {
-        $header = $("#analysistype");
-    $header.next().hide();
-    $("#after").hide();
-}
-
 $(document).ready(function(){
     $( "#progressbar" ).progressbar({
     value: 0
 });
     $( "#radioset" ).buttonset();
+});
 
  mapboxgl.accessToken = 'pk.eyJ1IjoiYnlyb25hZXJvIiwiYSI6ImNpaGgxeGkzaTBtZjl0Y2x6bmp6YW02NnQifQ.4tkhTXyt_T7Cfxbmre8Z-w';
+        var polydata = JSON.parse(localStorage.getItem("polygondata"));
         var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/satellite-v9',
         // initial position in [lon, lat] format
-        center: [149.753208 , -27.4060615],
+        center: [153.007394, -27.554095],
         // initial zoom
-        zoom: 16
+        zoom: 18
         });
 
-        map.on('load', function () {
+    map.on('load', function () {
         map.addControl(new MapboxGeocoder({
         accessToken: mapboxgl.accessToken
         }));
@@ -35,21 +30,19 @@ $(document).ready(function(){
                         'type': 'Feature',
                     'geometry': {
                             'type': 'Polygon',
-                            'coordinates': [[[149.752224 , -27.405166],[149.754192, -27.405166],[149.754192, -27.406957],[149.752224 , -27.406957]]]
+                            'coordinates': [[polydata[0],
+                                            polydata[1],
+                                            polydata[2],
+                                            polydata[3]]]
                 }
             }
         },
         'layout': {},
         'paint': {
-            "fill-color": "#27e846",
-            "fill-opacity": 0.5
+            'fill-color': '#088',
+            'fill-opacity': 0.8
         }
     });
-});
-
-
-                            
-
 });
 
 $("#progressbar > div").css({ 'background': '#00ff00' });
@@ -71,7 +64,7 @@ $("#progressbar > div").css({ 'background': '#00ff00' });
 
 function viewdata(){
     mapboxgl.accessToken = 'pk.eyJ1IjoiYnlyb25hZXJvIiwiYSI6ImNpaGgxeGkzaTBtZjl0Y2x6bmp6YW02NnQifQ.4tkhTXyt_T7Cfxbmre8Z-w';
-            mapStyle = {
+        var mapStyle = {
             "version": 8,
             "sources": {
                 "satellite": {
@@ -81,13 +74,12 @@ function viewdata(){
                 },
                 "overlay": {
                     "type": "image",
-                    "url": "http://nearsat.com/img/beforeanalysis.png",
-                    //"url": "https://vignette.wikia.nocookie.net/narnia/images/7/7e/Caspian_dawn_treader.png/revision/latest?cb=20101213200426",
+                    "url": "https://vignette.wikia.nocookie.net/narnia/images/7/7e/Caspian_dawn_treader.png/revision/latest?cb=20101213200426",
                     "coordinates": [
-                                    [149.752224, -27.405166],
-                                    [149.754192, -27.405166],
-                                    [149.754192, -27.406957],
-                                    [149.752224, -27.406957]
+                        [153.007059, -27.553928], //top left
+                        [153.007558, -27.553928],
+                        [153.007558, -27.554348], //bottom right
+                        [153.007059, -27.554348]
                     ]
                 }
             },
@@ -105,52 +97,11 @@ function viewdata(){
                 "source": "overlay",
             }]
         };
-
-        mapStyle1 = {
-            "version": 8,
-            "sources": {
-                "satellite": {
-            "type": "raster",
-            "url": "mapbox://mapbox.satellite",
-            "tileSize": 256
-                },
-                "overlay": {
-                    "type": "image",
-                    "url": "http://nearsat.com/img/afteranalysis.png",
-                    //"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/1200px-Wikipedia-logo-v2-en.svg.png",
-                    "coordinates": [
-                                    [149.752224, -27.405166],
-                                    [149.754192, -27.405166],
-                                    [149.754192, -27.406957],
-                                    [149.752224, -27.406957]
-
-                        //[153.007059, -27.553928], //top left
-                        //[153.007558, -27.553928],
-                        //[153.007558, -27.554348], //bottom right
-                        //[153.007059, -27.554348]
-                    ]
-                }
-            },
-            "layers": [{
-                "id": "background",
-                "type": "background",
-                "paint": { "background-color": "rgb(4,7,14)" }
-            }, {
-                "id": "satellite",
-                "type": "raster",
-                "source": "satellite"
-            }, {
-                "id": "overlay",
-                "type": "raster",
-                "source": "overlay",
-            }]
-        };
-
-            map = new mapboxgl.Map({
+        var map = new mapboxgl.Map({
             container: 'map',
             //minZoom: 14,
-            zoom: 17,
-            center: [149.753208 , -27.4060615],
+            zoom: 18,
+            center: [153.007394, -27.554095],
             //bearing: 87,
             style: mapStyle,
 });
@@ -160,7 +111,7 @@ function viewdata(){
         }));
 
 ///////////// Add Drawing Function ///////////////////
- draw = new MapboxDraw({
+var draw = new MapboxDraw({
         displayControlsDefault: false,
         controls: {
         polygon: true,
@@ -182,6 +133,7 @@ function viewdata(){
             // restrict to area to integer
             var rounded_area = Math.round(Math.round(area*100)/100);
             answer.innerHTML = '<strong contenteditable="true">' + rounded_area + '</strong> m<sup>2</sup> selected.';
+            localStorage.setItem("drawndata", JSON.stringify(data.features[0].geometry.coordinates[0]));
             /*console.log(data.features[0].geometry.coordinates[0]);*/
         } else {
             answer.innerHTML = '';
@@ -367,24 +319,23 @@ function setPositionstop() {
 
 ///////////
 
-
+$(function () {
     var size = ['0.5', '1', '2', '3', '4'];
     $('#slider').slider({
         min: 0,
         max: 4,
         step: 1,
-        value: 1,
         create: function (event, ui) {
-            $('#selectedMonth').text(size[1]);
+            $('#selectedMonth').text(size[0]);
         },
         slide: function (event, ui) {
             $('#selectedMonth').text(size[ui.value]);
         }
     });
+});
 
 /// Map Slider ///
-/*function mapslider(){
-$("#after").show();
+function mapslider(){
 
 var afterMapStyle = {
             "version": 8,
@@ -428,98 +379,4 @@ var asd = new mapboxgl.Compare(map, afterMap, {
     // Set this to enable comparing two maps by mouse movement:
     // mousemove: true
 });
-}*/
-
-function analysisimagetoggle(){
-    var mapstyleid = map.getStyle();
-    if (mapstyleid.sources.overlay.url == "http://nearsat.com/img/beforeanalysis.png"){
-        map.setStyle(mapStyle1);
-        document.getElementById("analysisimage").value = "Pre Analysis";
-    } else {
-        map.setStyle(mapStyle);
-        document.getElementById("analysisimage").value = "Post Analysis";
-    }
 }
-
-/////////////////////// Analysis Panel /////////////////
-/// # is ID selctor, . is class selector///
-
-/*$(document).on("click", '.analysistype',function(e){
-
-    $header = $(e.target.id);
-    $content = $header.next();
-    $content.slideToggle(300);
-    }
-
-});*/
-function analysistypetoggle(){
-    $header = $("#analysistype");
-    //getting the next element
-    $content = $header.next();
-    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-    $content.slideToggle(400);
-    }
-
-function treecountingtoggledown(){
-    analysistypetoggle()
-    setTimeout(function(){
-        $header = $("#analysistype");
-        //getting the next element
-        $content = $header.next().next();
-        //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-        $content.slideDown(400);
-    }, 400); 
-    }
-function treecountingtoggleup(){
-    $header = $("#analysistype");
-    //getting the next element
-    $content = $header.next().next();
-    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-    $content.slideUp(400);
-    setTimeout(analysistypetoggle(), 400); 
-    }
-
-function treecountingtoggleup1(){
-    $header = $("#analysistype");
-    //getting the next element
-    $content = $header.next().next();
-    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-    $content.slideUp(400);
-    }
-function treecountingtoggledown1(){
-    setTimeout(function(){
-        $header = $("#analysistype");
-        //getting the next element
-        $content = $header.next().next();
-        //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-        $content.slideDown(400);
-    }, 400); 
-    }
-
-function resulttoggledown(){
-    treecountingtoggleup1()
-    //if (draw) {
-    draw.deleteAll();
-    var answer = document.getElementById('drawn-area');
-    answer.innerHTML = '';
-    //map.removeControl(draw);
-        //draw = undefined;
-    //}
-    
-    setTimeout(function(){
-        $header = $("#analysistype");
-        //getting the next element
-        $content = $header.next().next().next();
-        //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-        $content.slideDown(400);
-    }, 400); 
-    }
-
-function resulttoggleup(){
-    $header = $("#analysistype");
-    //getting the next element
-    $content = $header.next().next().next();
-    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-    $content.slideUp(400);
-    setTimeout(treecountingtoggledown1(), 400); 
-    }
