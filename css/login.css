@@ -1,0 +1,85 @@
+body{
+	background-color: rgb(11,29,58);
+	background-repeat: no-repeat;
+	background-size: 100% 720px;
+}
+
+.container1{
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.container{
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 80px;
+}
+
+input[type="text"],input[type="password"]{
+	height: 45px;
+	width: 300px;
+	font-size: 15px;
+	margin-bottom: 20px;
+	background-color: rgb(255,255,255);
+	padding-left: 32px;
+}
+
+.form-input::before{
+	content: "\f007";
+	position: absolute;
+	font-family: "FontAwesome";
+	font-size: 23px;
+	padding-left: 10px;
+	padding-top: 6px;
+	color: rgba(198, 198, 198, 1);
+}
+
+.form-input:nth-child(2)::before{
+	content: "\f023"
+}
+
+.btn-login{
+	padding-top: 15px
+	padding-bottom: 15px;
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 100px;
+	color: #fff;
+	height: 45px;
+	border-radius: 4px;
+	border: none;
+	background-color: #2ECC71;
+    border-bottom: 4px solid #27AE60;
+    font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
+
+}
+
+input[type="button"]:active{
+  transform: translateY(4px);
+}
+
+.btn-login:hover{
+  background-color: #40d47e;
+}
+
+.btn-signup:hover{
+  background-color: #e95d4f;
+}
+
+.btn-signup{
+	padding-top: 15px
+	padding-bottom: 15px;
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 100px;
+	color: #fff;
+	height: 45px;
+	border-radius: 4px;
+	border: none;
+	background-color: #E74C3C;
+    border-bottom: 4px solid #C0392B;
+    font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
+
+}
+ 

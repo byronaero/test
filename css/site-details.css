@@ -1,5 +1,5 @@
 body {
-  background-color: #dbd9d9;
+  background-color: rgb(11,29,58);
   background-repeat: no-repeat;
   background-size: 100% 720px;
   font: 500 20px/26px 'Helvetica Neue', Helvetica, Arial, Sans-serif;
@@ -30,6 +30,7 @@ gets 2/3 of the page. You can adjust this to your personal liking. */
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 
 .container1{
   text-align: center;
@@ -70,6 +71,7 @@ gets 2/3 of the page. You can adjust this to your personal liking. */
 
 }
 
+
 .lists{
   padding-top:25px;
   padding-bottom:25px;
@@ -103,6 +105,31 @@ gets 2/3 of the page. You can adjust this to your personal liking. */
   border-bottom: 4px solid #2C3E50;
 }
 
+.taskoutlabel{
+  font-size: 15px;
+  font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
+  margin-left: 10%
+}
+
+/* Analysis Panel */
+.analysispanel{
+  background-color: #BDC3C7;
+  margin-top: 0;
+  width: 80%;
+  border-radius: 4px;
+  margin-left: 10%;
+  padding: 15px 5px;
+  font-size: 15px;
+}
+.analysisselection{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.analysisselection:hover{
+ background-color: #edeaea;
+} 
 
 div[type="header"]{
   padding-top: 25px;
@@ -119,41 +146,19 @@ div[type="header"]{
 }
 
 
-
 /* Analysis Panel */
-.analysispanel{
-  background-color: #BDC3C7;
-  margin-top: 0;
-  width: 80%;
-  border-radius: 4px;
-  margin-left: 10%;
-  padding: 15px 5px;
-  font-size: 15px;
-}
-
 input[name="check"]{
     display: none;
 }
-
-.analysisselection{
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.analysisselection:hover{
- background-color: #edeaea;
-} 
 
 input[name="check"] + .label-text{
   padding: 5px 20px;
   margin-right: 10px;
   margin-left: 10px;
-  color: #111111;
+  color: #fff;
   border-radius: 4px;
   border: none;
   font-size: 15px;
-  font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
 }
 
 input[name="check"]:active + .label-text{
@@ -163,14 +168,6 @@ input[name="check"]:hover + .label-text{
  cursor: pointer;
 }
 
-
-/* Tree Counting*/
-.analysistext{
-  font-size: 15px;
-  font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
-  margin-bottom: 5px;
-  margin-left: 7px;
-}
 
 /* Buttons */
 .btn-login{
@@ -217,47 +214,4 @@ input[type="submit"]:active{
     font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
     font-size:15px;
 
-}
-
-/*input[name="submit"]{
-
-   padding-left:35px;
-  padding-top: 15px
-  padding-bottom: 15px;
-  margin-top: 20px;
-  width: 140px;
-  color: #fff;
-  height: 45px;
-  border-radius: 4px;
-  border: none;
-  background-color: #34495E;
-  border-bottom: 4px solid #2C3E50;
-
-}*/
-
-input[type="button"]{
-  display: none;
-}
-label {
-  cursor: pointer;
-}
-
-input[type="button"] + .label-text:before{
-  content: "\f00d";
-  color: #C0392B;
-  font-family: FontAwesome;
-  speak: none
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  width: 1em;
-  display: inline-block;
-  margin-right: 5px;
-  font-size: 15px;
-  position: absolute; 
-  margin-left: 24.7%; 
-  margin-top: -5px;
 }

@@ -1,0 +1,233 @@
+body {
+  background-color: #dbd9d9;
+  background-repeat: no-repeat;
+  background-size: 100% 720px;
+  font: 500 20px/26px 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The page is split between map and sidebar - the sidebar gets 1/3, map
+gets 2/3 of the page. You can adjust this to your personal liking. */
+.sidebar {
+  width: 33.333333%;
+  padding:0;
+  margin:0;
+}
+
+.map {
+  border-left: 1px solid #727272;
+  position: absolute;
+  left: 33.333333%;
+  width: 66.666666%;
+  top: 0;
+  bottom: 0;
+}
+
+.marker {
+  background-image: url('./img/mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pad2 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container1{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.site-header{
+  color: rgb(35,35,35);
+  font-size: 27px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
+}
+
+div[type="header"]{
+  cursor: pointer;
+  padding-bottom: 30px;
+  text-align: center;
+  width: 90%;
+  margin-left: 4.5%;
+  margin-top: 15px;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  background-color: #2C3E50;
+  font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
+  font-size: 20px;
+}
+
+div[type="header"]:hover{
+  background-color: #34495E;
+  border-bottom: 4px solid #2C3E50;
+}
+
+div[type="header"]:active{
+  transform: translateY(4px);
+}
+
+.content{
+  padding-top:25px;
+  padding-bottom:25px;
+  width: 90%;
+  margin-left: 4.5%;
+  margin-top: -6px;
+  background-color: #29b765;
+  border: none;
+  text-align: center;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+
+.form-input{
+  font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
+  font-size: 20px;
+}
+
+.imagearea{
+    font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
+  font-size: 20px;
+}
+
+.calculationbox{
+  margin-top: 10px;
+}
+
+.spacer{
+  width: 100%;
+  height: 20px;
+}
+/* Style for button to change map styles */
+input[type="button"][class="toggle"]{
+  position: absolute; 
+  margin-left: 170px; 
+  margin-top: -40px;
+  height: 22px;
+  width: 22px;
+}
+
+
+input[type="submit"]{
+  padding-top: 15px
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 100px;
+  color: #fff;
+  height: 45px;
+  border-radius: 4px;
+  border: none;
+  background-color: #E74C3C;
+  border-bottom: 4px solid #C0392B;
+  font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
+
+}
+
+input[type="submit"]:active{
+  transform: translateY(4px);
+}
+
+input[type="submit"]:hover{
+  background-color: #e95d4f;
+}
+
+.btn-addsite{
+  background:url('../img/plusicon.png') no-repeat left center;
+  background-size: 15%;
+  background-position: 12% 50%;
+   padding-left:35px;
+  padding-top: 15px
+  padding-bottom: 15px;
+  margin-top: 20px;
+  width: 140px;
+  color: #fff;
+  height: 45px;
+  border-radius: 4px;
+  border: none;
+  background-color: #34495E;
+  border-bottom: 4px solid #2C3E50;
+  font-family: Montserrat,'Helvetica Neue',Arial,sans-serif;
+  font-size: 20px;
+}
+
+.lists{
+  padding-top:25px;
+  padding-bottom:25px;
+  margin: 15px 5px;
+  background-color: rgb(61, 252, 47);
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+}
+
+/* Adding map toggle (street - satellite) */
+#menu {
+        position: absolute;
+        right: 5px;
+        bottom: 25px;
+        font-size: 15px; 
+        font-family: 'Helvetica Neue', Helvetica;
+    }
+label {
+  cursor: pointer;
+  color: #666;
+}
+input[type="radio"]{
+  display: none;
+}
+input[name="rtoggle"] + .label-text{
+  padding: 3px 15px;
+  color: #1c1c1c;
+  border-radius: 4px;
+  border: none;
+  font-size: 12px;
+  background: #7F8C8D;
+}
+input[name="rtoggle"]:checked + .label-text{
+  padding: 3px 15px;
+  color: #e5e3e3;
+  border-radius: 4px;
+  border: none;
+  font-size: 12px;
+  background: #2C3E50;
+}
+
+
+
+input[type="button"][class="toggle"]{
+  display: none;
+}
+label {
+  cursor: pointer;
+  margin: 0;
+}
+
+input[type="button"][class="toggle"] + .label-text:before{
+  content: "\f0c9";
+  color: #06a3e9;
+  font-family: FontAwesome;
+  speak: none
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  width: 1em;
+  display: inline-block;
+  margin-left: 370px;
+  font-size: 15px;
+}
