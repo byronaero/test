@@ -79,7 +79,7 @@ function viewdata(){
                 },
                 "overlay": {
                     "type": "image",
-                    "url": "https://github.com/byronaero/test/blob/gh-pages/js/caspian.jpg",
+                    "url": "http://nearsat.com/img/caspian.jpg",
                     "coordinates": [
                         [153.007059, -27.553928], //top left
                         [153.007558, -27.553928],
