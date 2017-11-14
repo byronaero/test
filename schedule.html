@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Schedule">
+    <meta name="author" content="NearSat PTY LTD">
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!--title>NearSat - Analytics</title-->
+    <title>NearSat - Schedule</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet" type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/creative.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+    <!-- Mapbox API -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.css' type='text/css' />
+
+    <link rel="stylesheet" href="css/schedule.css">
+    <link rel="stylesheet" href="css/jQuery.timepicker.css">
+
+    <link href="./css/jquery-ui.css" rel="stylesheet">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+    <div class='sidebar pad2' id="cart" style="padding-top: 2px;">
+
+    <!-- Recurrence Section -->
+    <div class='namelabel'>Recurrence</div>
+    <div style="text-align:center; margin-top: -2px;">
+    <select id="selectmenu" style="width:70%;height:27px; font-size: 17px;">
+        <option>Once</option>
+        <option selected="selected">Daily</option>
+        <option>Weekly</option>
+        <option>Monthly</option>
+        <option>Yearly</option>
+    </select>
+    </div>
+
+    <!-- Data Type Section -->
+    <form>
+    <div class='namelabel'>Data Type</div>
+    <div style="background-color: #BDC3C7; margin-top: 0; width: 70%; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; margin-left: 15%; border-bottom: 4px solid #7F8C8D; padding-bottom: 2px; font-size: 15px;">
+    <label style="margin-top: 2px;">
+        <input type="checkbox" id="rgb" name="check" style="width: 400px">
+        <span class="label-text" style="width: 400px">RGB</span>
+    </label><br>
+    <label>
+        <input type="checkbox" id="rgb" name="check" style="width: 400px">
+        <span class="label-text" style="width: 400px">Near-Infrared</span>
+    </label><br>
+    <label>
+        <input type="checkbox" id="rgb" name="check" style="width: 400px">
+        <span class="label-text" style="width: 400px">Thermal</span>
+    </label><br>
+    <label>
+        <input type="checkbox" id="rgb" name="check" style="width: 400px">
+        <span class="label-text" style="width: 400px">Hyperspectral</span>
+    </label>
+    </div>
+    </form>
+
+
+    <!-- Date Section-->
+    <div class='namelabel' style="width:70%; margin-left:15%;">Dates &amp; Times
+    <a title="View and edit saved dates."><i class="fa fa-bars" aria-hidden="true" style="position: absolute; margin-left: 73px; margin-top: 5px"></i></a>
+    </div>
+    
+    <!--div style="margin-left: 17%"> .ui-datepicker {width : 75%; 
+    <div id="datepicker"></div>
+    </div-->
+    <div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      November 2017</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays" style="padding-left: 0; width: 70%; text-align: center;">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days" style="padding-left: 0; width: 70%; text-align: center;">  
+    <li></li>
+    <li></li>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li>10</li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li><span class="active">15</span></li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
+  <li></li>
+    <li></li>
+</ul>
+
+    <!-- Time Section-->
+    <div class="timegroup">
+    <select id="selectmenu" style="width:15%;height:25px; font-size: 16px; margin-top: 7px;">
+        <option>01</option>
+        <option>02</option>
+        <option>03</option>
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option selected="selected">08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+    </select>
+
+<select id="selectmenu" style="width:15%;height:25px; font-size: 16px;">
+        <option selected="selected">00</option>
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+        <option>50</option>
+    </select>
+
+    <select id="selectmenu" style="width:15%;height:25px; font-size: 16px;">
+        <option selected="selected">AM</option>
+        <option>PM</option>
+    </select>
+
+    <a title="Add time slots for selected date."><i class="fa fa-plus-circle" aria-hidden="true" style="position: absolute; margin-left: 20px; margin-top: 8px;"></i></a>
+    </div>
+
+     <!-- Data Type Section -->
+
+    <div style="padding:0; margin:0; text-align:center">
+            <input type="submit" name="submit" class="btn-submit" value="Submit" onclick="window.location.href='site-details.html'">            
+    </div>
+    
+    </div>
+
+    <div id='map' class='map pad2'></div>
+
+
+        <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
+
+                <!-- jQuery UI -->
+    <script src="external/jquery/jquery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+
+
+    <!-- Site Details Functions -->
+    <script src="./js/schedule.js"></script>
+
+    <script src="./js/jquery.timepicker.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
+
+
+
+</body>
+
+</html>

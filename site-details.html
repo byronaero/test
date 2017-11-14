@@ -21,7 +21,6 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/creative.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
@@ -32,13 +31,14 @@
     <script src='./js/mapbox-gl-draw.js'></script>
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.0/mapbox-gl-draw.css' type='text/css'/>
 
-        <!-- Mapbox Compare -->
+        <!-- Mapbox Commpare -->
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.js'></script>
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.css' type='text/css' />
 
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.min.js'></script>
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.css' type='text/css' />
 
+    <link rel="stylesheet" href="css/site-details.css">
     <link rel="stylesheet" href="css/site-details-veuron.css">
 
     <link href="./css/jquery-ui.css" rel="stylesheet">
@@ -64,9 +64,9 @@
         <input type="submit" name="submit" class="btn-signup" value="Dashboard" style="margin-right:30px; width: 120px" onclick="window.location.href='dashboard.html'">
         <input type="submit" name="submit" class="btn-signup" value="Schedule" style="margin-left: 30px; width: 120px" onclick="window.location.href='schedule.html'">            
     </div>
-    
-     <!-- Priority Taskout Section -->
-    <div class='namelabel'>Priority Taskout : 25 Minutes</div>
+
+    <!-- Priority Taskout Section -->
+    <div class='namelabel'>Priority Taskout : 15 Minutes</div>
     <div style="display: inline-block; margin-left: 30px;">
     <div id="radioset" style="margin-top: -10px;">
         <input type="radio" id="radio1" name="radio">
@@ -79,17 +79,31 @@
     </div>
 
     <div style="padding:0; margin-left:10px; display: inline-block; margin-top: 5px;">
-        <input type="submit" name="submit" class="btn-signup" id="btn-taskout" value="Task Out Available">
+        <input type="submit" name="submit" class="btn-signup" id="btn-taskout" value="Task Out Available" onclick="taskout()">
     </div>
 
+    <!-- Taskout Panel -->
+    <div>
+        <!-- Timer Section -->
+        <div id="timer" class="taskoutlabel"></div>
+
+        <!-- Progress Section -->
+        <div id="progresspct" class="taskoutlabel"></div>
+        <div style=" width: 85%; margin-left: 7.5%; display: none; height: 25px;" id="progress">
+            <div id="progressbar"></div>
+        </div>
+
+    </div>
+
+
     <!-- Data & Analysis Section -->
-    <div class='namelabel'>Data &amp; Analysis</div>
+    <div class='namelabel' style="margin-top: 30px;">Data &amp; Analysis</div>
     <div style="text-align: center;">
         <div style="padding:0; margin:0; text-align:center; display:inline-block;" id="viewdata">
             <input type="submit" name="submit" class="btn-login" value="View Data" onclick="viewdata()">
         </div>
 
-        <div style="padding:0; margin:0; text-align:center; display:inline-block;">
+        <div style="padding:0; margin:0; text-align:center; display:inline-block;" id="analysis">
             <input type="submit" name="submit" class="btn-login" id="btn-taskout" value="Analysis" onclick="analysistypetoggle()">
         </div>
     </div>
@@ -115,43 +129,18 @@
             </label>
         </div>
 
-        <!-- Tree Counting Pane -->
-        <div class="analysispanel" style="display: none; padding-top: 0px; padding-bottom: 0px; ">
-            <!--button onclick="treecountingtoggleup()">x</button-->  
-            <label>
-                <input type="button" style="height:1px; padding: 0; margin: 0;"onclick="treecountingtoggleup()">
-                <div class="label-text" style="height: 1px"></div>
-            </label>  
-            <div class="analysistext" style="margin-top: -15px;">Select Area to Count : <span id="drawn-area"></span></div>
-            <div class="analysistext">Tree Target Size : &gt;<span id="selectedMonth"></span>m<sup>3</sup></div>
+     <!-- Tree Counting Pane -->
+        <div class="analysispanel" style="display: none;">
+            <button onclick="treecountingtoggleup()">Collapse</button>    
+            <div>Select Area to Count :<span id="drawn-area"></span></div>
+            <div>Tree Target Size : &gt;<span id="selectedMonth"></span>m<sup>3</sup></div>
             <div id="slider"></div>
-            <div style="text-align: center; margin-top: 5px;">
-            <input type="submit" name="submit" class="btn-login" value="Run Analysis" onclick="resulttoggledown()">
-            </div>
-        </div>
-            
-        <!-- Analysis Pane Section is currently separate to Tree counting pane -->
-        <div class="analysispanel" style="display: none;padding-top: 0px; padding-bottom: 0px;">
-            <!--button onclick="resulttoggleup()">x</button-->
-            <label>
-                <input type="button" style="height:1px; padding: 0; margin: 0;"onclick="resulttoggleup()">
-                <div class="label-text" style="height: 1px"></div>
-            </label>
-            <div class="analysistext" style="margin-top: -15px;">V-TOL VEURON<sup>TM</sup> Results</div>
-            <div class="analysistext">Target Result : 224,881 Tree / Shrubs</div>
-            <div class="analysistext">Target Size : 1m<sup>3</sup> (+)</div>
-            <div class="analysistext">Target vs Other : 5.59% (Trees) vs 94.41% (Open Grass)</div>
-            <div style="text-align: center; margin-top: 5px;">
-            <input type="submit" name="submit" class="btn-login" value="View Analysis"  id="analysisimage" onclick="analysisimagetoggle()">
-            </div>
+            <input type="submit" name="submit" class="btn-addsite" value="Run Analysis">
         </div>
 
     </div>
 
-    <!-- Start of Map Pane -->
-    <div id='map' class='map pad2'></div>
-    <!--div id='after' class='map pad2'></div-->
-
+    <div id='map' class='map pad2'></div><div id='after' class='map pad2'></div>
 
 
         <!-- jQuery -->
@@ -164,7 +153,7 @@
 
 
     <!-- Site Details Functions -->
-    <script src="./js/site-Veuron.js"></script>
+    <script src="./js/site.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
