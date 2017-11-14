@@ -295,14 +295,14 @@ var x = setInterval(function() {
 function progressupdate(progressleft){
     var y = setInterval(function(){
         var getprogress = $( "#progressbar" ).progressbar( "value" );
-        document.getElementById("progresspct").innerHTML = 'Taskout Completion : ' + Math.round((getprogress)) + '%';
+        document.getElementById("progresspct").innerHTML = 'Taskout completion : ' + Math.round((getprogress)) + '%';
         $( "#progressbar" ).progressbar( "value", getprogress + 1)},progressleft);
 
 }
 
 function progressupdate1(updaterate1, valuenow){
     $( "#progressbar" ).progressbar( "value", valuenow);
-    document.getElementById("progresspct").innerHTML = 'Taskout Completion : ' + Math.round((valuenow)) + '%';
+    document.getElementById("progresspct").innerHTML = 'Taskout completion : ' + Math.round((valuenow)) + '%';
 
     var y = setInterval(function(){
         var getprogress = $( "#progressbar" ).progressbar( "value" );
